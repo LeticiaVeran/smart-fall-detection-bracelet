@@ -189,3 +189,20 @@ To use it on networks that isolate devices (such as a campus network):
 | `bracelet/fall` | `medium_confidence` | Fall without detected rotation |
 | `bracelet/emergency` | `manual_button` | Emergency button pressed |
 | `bracelet/status` | `online` | ESP32 connected to the broker |
+
+---
+
+## Services running (screenshots)
+
+Evidence of the server-side services working end to end:
+
+**Automations** — both automations active in Home Assistant, with their last
+trigger times:
+
+![Home Assistant automations](../photos/home_assistant_automations.jpg)
+
+**MQTT broker** — messages arriving from the bracelet on the
+`bracelet/fall` and `bracelet/emergency` topics (listened to via the MQTT
+integration's *Listen to a topic* tool):
+
+![MQTT messages received](../photos/home_assistant_mqtt.jpg)
