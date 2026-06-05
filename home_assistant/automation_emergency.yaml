@@ -1,0 +1,21 @@
+alias: "Bracelet — Emergency Button"
+description: >
+  Sends a persistent notification to the caregiver's phone when the elderly
+  person presses the manual emergency button on the bracelet.
+
+trigger:
+  - platform: mqtt
+    topic: bracelet/emergency
+    payload: manual_button
+
+action:
+  - action: notify.mobile_app_YOUR_PHONE
+    data:
+      title: "🆘 MANUAL EMERGENCY"
+      message: "The elderly person pressed the emergency button! Respond immediately."
+      data:
+        persistent: true
+        tag: emergency_button
+        importance: high
+
+mode: single

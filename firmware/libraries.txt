@@ -1,17 +1,17 @@
-# Bibliotecas necessárias — pulseira-inteligente-esp32
-# Instale via Arduino IDE: Sketch → Incluir Biblioteca → Gerenciar Bibliotecas
+# Required libraries — smart-fall-detection-bracelet
+# Install via Arduino IDE: Sketch → Include Library → Manage Libraries
 
-# ── Nativas do ESP32 (já incluídas ao instalar o pacote Espressif) ──
-Wire.h       # comunicação I2C com o MPU6050
-WiFi.h       # conexão WiFi
+# ── Native to the ESP32 (already included with the Espressif package) ──
+Wire.h       # I2C communication with the MPU6050
+WiFi.h       # WiFi connection
 
-# ── Instalar manualmente ─────────────────────────────────────────────
-PubSubClient # cliente MQTT — autor: Nick O'Leary
-             # pesquisar "PubSubClient" no Gerenciador de Bibliotecas
-             # versão recomendada: 2.8 ou superior
+# ── Install manually ─────────────────────────────────────────────────
+PubSubClient # MQTT client — author: Nick O'Leary
+             # search for "PubSubClient" in the Library Manager
+             # recommended version: 2.8 or higher
 
-# ── Pacote do ESP32 (Gerenciador de Placas) ──────────────────────────
+# ── ESP32 package (Boards Manager) ───────────────────────────────────
 # URL: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
-# Pacote: esp32 by Espressif Systems
-# Versão testada: 2.x
-# Placa selecionada: ESP32 Dev Module
+# Package: esp32 by Espressif Systems
+# Tested version: 2.x
+# Selected board: ESP32 Dev Module

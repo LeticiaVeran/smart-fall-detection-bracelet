@@ -1,5 +1,5 @@
-# ── Credenciais — NUNCA enviar ao GitHub ──────────────────────
-firmware/config.h
+# ── Credentials — NEVER commit to GitHub ──────────────────────
+firmware/main/config.h
 
 # ── Arduino IDE ───────────────────────────────────────────────
 *.elf
@@ -9,17 +9,17 @@ firmware/config.h
 build/
 .arduino15/
 
-# ── Sistema operacional ───────────────────────────────────────
+# ── Operating system ──────────────────────────────────────────
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# ── Editores ──────────────────────────────────────────────────
+# ── Editors ───────────────────────────────────────────────────
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# ── Temporários ───────────────────────────────────────────────
+# ── Temporary ─────────────────────────────────────────────────
 *.tmp
 *.log

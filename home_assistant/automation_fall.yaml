@@ -1,0 +1,38 @@
+alias: "Bracelet — Fall Alert"
+description: >
+  Sends a persistent notification to the caregiver's phone when the ESP32
+  detects a fall and publishes to the MQTT topic bracelet/fall.
+
+trigger:
+  - platform: mqtt
+    topic: bracelet/fall
+
+action:
+  - choose:
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'high_confidence' }}"
+        sequence:
+          - action: notify.mobile_app_YOUR_PHONE
+            data:
+              title: "⚠️ FALL DETECTED"
+              message: "Fall confirmed with high confidence! Check on the elderly person immediately."
+              data:
+                persistent: true
+                tag: bracelet_fall
+                importance: high
+
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'medium_confidence' }}"
+        sequence:
+          - action: notify.mobile_app_YOUR_PHONE
+            data:
+              title: "⚠️ POSSIBLE FALL"
+              message: "Fall detected with medium confidence. Check on the elderly person."
+              data:
+                persistent: true
+                tag: bracelet_fall
+                importance: high
+
+mode: single

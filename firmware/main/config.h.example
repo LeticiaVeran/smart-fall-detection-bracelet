@@ -1,0 +1,30 @@
+// ══════════════════════════════════════════════════════════════
+// config.h.example — bracelet configuration template
+// ──────────────────────────────────────────────────────────────
+// 1. Copy this file: cp config.h.example config.h
+// 2. Fill in your real credentials
+// 3. config.h is in .gitignore — your passwords stay safe
+// ══════════════════════════════════════════════════════════════
+
+#ifndef CONFIG_H
+#define CONFIG_H
+
+// ── WiFi network ──────────────────────────────────────────────
+// Name and password of the WiFi network the ESP32 will connect to.
+// For a presentation on campus: use your phone's hotspot.
+#define WIFI_SSID      "YOUR_NETWORK_NAME"
+#define WIFI_PASSWORD  "YOUR_NETWORK_PASSWORD"
+
+// ── MQTT broker ───────────────────────────────────────────────
+// IP address of the Raspberry Pi on the same WiFi network.
+// To find the IP: ping homeassistant.local
+// or check it in your router/hotspot settings.
+#define MQTT_SERVER    "192.168.X.X"
+#define MQTT_PORT      1883
+
+// ── MQTT credentials ──────────────────────────────────────────
+// Created in: Home Assistant → Settings → People
+#define MQTT_USER      "YOUR_MQTT_USER"
+#define MQTT_PASSWORD  "YOUR_MQTT_PASSWORD"
+
+#endif

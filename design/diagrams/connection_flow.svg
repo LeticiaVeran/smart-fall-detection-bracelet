@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1480 820" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3a3a3a"/>
+    </marker>
+    <marker id="arrowsmall" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6b6b6b"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1480" height="820" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="40" y="46" font-size="26" font-weight="700" fill="#1a1a1a">Connection &amp; Data Flow — Smart Fall-Detection Bracelet</text>
+  <text x="40" y="74" font-size="15" fill="#666">From the wrist sensor, through the Raspberry Pi server, to the alert on the caregiver's phone</text>
+
+  <!-- ============ STAGE 1: ON THE WRIST ============ -->
+  <rect x="40" y="110" width="470" height="620" rx="16" fill="#EAF2FB" stroke="#2E75B6" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="275" y="142" font-size="18" font-weight="700" fill="#2E75B6" text-anchor="middle">① ON THE WRIST (bracelet)</text>
+
+  <!-- Battery -->
+  <rect x="70" y="170" width="180" height="70" rx="10" fill="#FFF4D6" stroke="#C8862E" stroke-width="2"/>
+  <rect x="250" y="195" width="9" height="20" rx="2" fill="#C8862E"/>
+  <text x="160" y="200" font-size="15" font-weight="700" fill="#7a5512" text-anchor="middle">Battery</text>
+  <text x="160" y="222" font-size="12.5" fill="#7a5512" text-anchor="middle">power bank / LiPo, 5V</text>
+
+  <!-- ESP32 (central) -->
+  <rect x="150" y="430" width="210" height="92" rx="10" fill="#D6E8F5" stroke="#2E75B6" stroke-width="2.5"/>
+  <text x="255" y="462" font-size="16" font-weight="700" fill="#1f5180" text-anchor="middle">ESP32-WROOM-32</text>
+  <text x="255" y="484" font-size="12.5" fill="#1f5180" text-anchor="middle">reads sensor · runs the</text>
+  <text x="255" y="502" font-size="12.5" fill="#1f5180" text-anchor="middle">3-phase fall algorithm</text>
+
+  <!-- Battery -> ESP32 power -->
+  <path d="M160,240 L160,476 L150,476" fill="none" stroke="#C8862E" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <text x="172" y="300" font-size="11.5" font-weight="600" fill="#7a5512">5V power</text>
+
+  <!-- MPU6050 -->
+  <rect x="70" y="300" width="170" height="78" rx="9" fill="#ffffff" stroke="#888" stroke-width="1.8"/>
+  <text x="155" y="328" font-size="14.5" font-weight="700" fill="#1a1a1a" text-anchor="middle">MPU6050 sensor</text>
+  <text x="155" y="348" font-size="11.5" fill="#555" text-anchor="middle">accelerometer +</text>
+  <text x="155" y="364" font-size="11.5" fill="#555" text-anchor="middle">gyroscope (MEMS)</text>
+  <!-- MPU -> ESP32 I2C -->
+  <path d="M180,378 L200,430" fill="none" stroke="#3a3a3a" stroke-width="2" marker-end="url(#arrowsmall)"/>
+  <text x="246" y="406" font-size="11.5" font-weight="600" fill="#2E75B6">I²C (SDA 21 / SCL 22)</text>
+
+  <!-- Button -->
+  <rect x="280" y="300" width="160" height="78" rx="9" fill="#ffffff" stroke="#888" stroke-width="1.8"/>
+  <text x="360" y="332" font-size="14.5" font-weight="700" fill="#1a1a1a" text-anchor="middle">Emergency</text>
+  <text x="360" y="352" font-size="14.5" font-weight="700" fill="#1a1a1a" text-anchor="middle">button</text>
+  <!-- Button -> ESP32 -->
+  <path d="M340,378 L320,430" fill="none" stroke="#3a3a3a" stroke-width="2" marker-end="url(#arrowsmall)"/>
+  <text x="330" y="416" font-size="11.5" font-weight="600" fill="#2E75B6" text-anchor="middle">GPIO 18</text>
+
+  <!-- Buzzer -->
+  <rect x="150" y="560" width="210" height="70" rx="9" fill="#ffffff" stroke="#888" stroke-width="1.8"/>
+  <text x="255" y="590" font-size="14.5" font-weight="700" fill="#1a1a1a" text-anchor="middle">Buzzer</text>
+  <text x="255" y="610" font-size="11.5" fill="#555" text-anchor="middle">local sound alarm</text>
+  <!-- ESP32 -> Buzzer -->
+  <path d="M255,522 L255,560" fill="none" stroke="#3a3a3a" stroke-width="2" marker-end="url(#arrowsmall)"/>
+  <text x="320" y="546" font-size="11.5" font-weight="600" fill="#2E75B6" text-anchor="middle">GPIO 19</text>
+
+  <text x="275" y="700" font-size="12" fill="#3d6ea5" text-anchor="middle" font-style="italic">On a confirmed fall: buzzer sounds instantly + alert is published</text>
+
+  <!-- ============ ARROW 1 -> SERVER ============ -->
+  <path d="M510,420 L600,420" fill="none" stroke="#3a3a3a" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="500" y="350" width="120" height="52" rx="8" fill="#fff" stroke="#2E75B6" stroke-width="1.5"/>
+  <text x="560" y="372" font-size="13.5" font-weight="700" fill="#2E75B6" text-anchor="middle">WiFi · MQTT</text>
+  <text x="560" y="390" font-size="11" fill="#555" text-anchor="middle">publish</text>
+  <text x="560" y="450" font-size="10.5" fill="#666" text-anchor="middle">bracelet/fall</text>
+  <text x="560" y="466" font-size="10.5" fill="#666" text-anchor="middle">bracelet/emergency</text>
+
+  <!-- ============ STAGE 2: SERVER ============ -->
+  <rect x="620" y="110" width="440" height="620" rx="16" fill="#E9F5EC" stroke="#2E8B57" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="840" y="142" font-size="18" font-weight="700" fill="#2E8B57" text-anchor="middle">② RASPBERRY PI 3B+ (server)</text>
+
+  <!-- Mosquitto -->
+  <rect x="680" y="250" width="320" height="92" rx="10" fill="#ffffff" stroke="#888" stroke-width="1.8"/>
+  <text x="840" y="284" font-size="16" font-weight="700" fill="#1a1a1a" text-anchor="middle">Mosquitto — MQTT broker</text>
+  <text x="840" y="306" font-size="12.5" fill="#555" text-anchor="middle">receives the messages published</text>
+  <text x="840" y="323" font-size="12.5" fill="#555" text-anchor="middle">by the bracelet</text>
+
+  <!-- HA -->
+  <rect x="680" y="430" width="320" height="110" rx="10" fill="#D8EFE0" stroke="#2E8B57" stroke-width="2.5"/>
+  <text x="840" y="464" font-size="16" font-weight="700" fill="#1f6b40" text-anchor="middle">Home Assistant</text>
+  <text x="840" y="487" font-size="12.5" fill="#1f6b40" text-anchor="middle">subscribes to the topics and runs</text>
+  <text x="840" y="504" font-size="12.5" fill="#1f6b40" text-anchor="middle">the alert automations, then sends a</text>
+  <text x="840" y="521" font-size="12.5" fill="#1f6b40" text-anchor="middle">persistent push notification</text>
+
+  <!-- Mosquitto -> HA -->
+  <path d="M840,342 L840,430" fill="none" stroke="#3a3a3a" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <text x="895" y="390" font-size="11.5" font-weight="600" fill="#2E8B57" text-anchor="middle">subscribe</text>
+
+  <text x="840" y="600" font-size="12" fill="#2E8B57" text-anchor="middle" font-style="italic">Runs on the same WiFi network as the bracelet</text>
+
+  <!-- ============ ARROW 2 -> CAREGIVER ============ -->
+  <path d="M1060,420 L1150,420" fill="none" stroke="#3a3a3a" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="1052" y="352" width="116" height="50" rx="8" fill="#fff" stroke="#2E8B57" stroke-width="1.5"/>
+  <text x="1110" y="374" font-size="13" font-weight="700" fill="#2E8B57" text-anchor="middle">Push</text>
+  <text x="1110" y="392" font-size="11" fill="#555" text-anchor="middle">notification</text>
+
+  <!-- ============ STAGE 3: CAREGIVER ============ -->
+  <rect x="1170" y="110" width="270" height="620" rx="16" fill="#FBF1E0" stroke="#C8862E" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="1305" y="142" font-size="18" font-weight="700" fill="#C8862E" text-anchor="middle">③ CAREGIVER</text>
+
+  <!-- Phone -->
+  <rect x="1240" y="300" width="130" height="240" rx="18" fill="#1f2733" stroke="#000" stroke-width="2"/>
+  <rect x="1252" y="322" width="106" height="196" rx="6" fill="#2b3543"/>
+  <!-- notification card -->
+  <rect x="1260" y="430" width="90" height="74" rx="8" fill="#3a4655"/>
+  <rect x="1268" y="440" width="18" height="18" rx="4" fill="#4aa3e0"/>
+  <text x="1296" y="453" font-size="9" font-weight="700" fill="#fff">FALL</text>
+  <text x="1296" y="463" font-size="9" font-weight="700" fill="#fff">DETECTED</text>
+  <text x="1305" y="480" font-size="7.5" fill="#cfd6df" text-anchor="middle">Fall confirmed —</text>
+  <text x="1305" y="490" font-size="7.5" fill="#cfd6df" text-anchor="middle">check on the</text>
+  <text x="1305" y="500" font-size="7.5" fill="#cfd6df" text-anchor="middle">elderly person</text>
+  <circle cx="1305" cy="332" r="3" fill="#11151b"/>
+  <text x="1305" y="575" font-size="13.5" font-weight="700" fill="#7a5512" text-anchor="middle">Caregiver's phone</text>
+  <text x="1305" y="596" font-size="12" fill="#7a5512" text-anchor="middle">(Home Assistant app)</text>
+
+  <!-- Legend -->
+  <text x="40" y="790" font-size="12.5" fill="#666">Legend:  ① wearable device  ·  ② local server  ·  ③ remote alert      Connections: I²C (sensor) → WiFi/MQTT (bracelet→server) → push notification (server→phone)</text>
+</svg>
