@@ -75,6 +75,7 @@ smart-fall-detection-bracelet/
 ├── documentation/       # 📚 Requirements, theory, user manual, technical docs (EN + PT)
 │   └── literature/      #    ← theoretical background + the source papers
 ├── firmware/            # 💾 ESP32 sketch (firmware/main/) + per-sensor docs + libraries
+│   ├── arduino-setup/   #    ← Arduino IDE installation guide
 │   └── sensors/         #    ← MPU6050 characteristics, pinout, code, serial output
 ├── home_assistant/      # 🖧 Server-side automations and setup guide
 └── photos/              # 📸 Photos of the prototype + the alert screens
