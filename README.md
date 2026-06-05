@@ -204,8 +204,8 @@ work, and no STL is published since it was only a quick prototype.
 
 | Team |
 |---|
-| Valentina Ragnini Scherer Col Debella Leiria |
 | Leticia Damasio Veran |
+| Valentina Ragnini Scherer Col Debella Leiria |
 
 **Institution:** UFSC — Araranguá Campus
 
