@@ -44,8 +44,7 @@ Pins 3 and 4 ───────────  not used
 
 The communication diagram (device → server → caregiver), required as part of the
 schematic deliverables, is in
-[`diagrams/connection_flow.svg`](diagrams/connection_flow.svg) (and a rendered
-[`connection_flow.png`](diagrams/connection_flow.png)):
+[`diagrams/connection_flow.png`](diagrams/connection_flow.png):
 
 ![Connection and data flow](diagrams/connection_flow.png)
 

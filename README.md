@@ -50,8 +50,6 @@ with fall detection and remote alerts via Home Assistant.
 
 ![Connection and data flow](design/diagrams/connection_flow.png)
 
-> Full-resolution diagram: [`design/diagrams/connection_flow.svg`](design/diagrams/connection_flow.svg)
-
 ---
 
 ## ✅ Implemented features

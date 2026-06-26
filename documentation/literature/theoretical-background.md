@@ -11,7 +11,7 @@
 ## 1. The problem: falls in the elderly
 
 Falls are a leading cause of serious injury and accidental death in older
-adults. The World Health Organization estimates roughly 646,000 fatal falls per
+adults. The World Health Organization estimates roughly 684,000 fatal falls per
 year worldwide (WHO, 2021), and Bourke & Lyons (2008) note that about one in
 three adults aged 65+ falls each year.
 
@@ -159,7 +159,7 @@ from **real readings captured on the device** (±4g scale, ~8,192 LSB/g, rest
 
 ### 5.1 I2C between the ESP32 and the MPU6050
 
-The sensor talks to the ESP32 over I2C, a two-wire bus (SDA + SCL). All 14 data
+The sensor talks to the ESP32 (Espressif, 2023) over I2C, a two-wire bus (SDA + SCL). All 14 data
 bytes — accelerometer, temperature and gyroscope — are read in a single
 transaction; the temperature bytes are discarded but **must** be read, otherwise
 the gyroscope registers stay misaligned (a direct consequence of the MPU6050
