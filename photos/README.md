@@ -22,7 +22,16 @@ Photos of the physical prototype and the alert screens.
 
 ## App screens (telas do sistema)
 
+### Phone notifications
+
 | Screen | What it shows |
 |---|---|
 | ![Fall detected](notification_fall_detected.jpg) | Persistent push notification on a fall (high confidence) |
 | ![Manual emergency](notification_manual_emergency.jpg) | Persistent push notification when the emergency button is pressed |
+
+### Home Assistant (server side)
+
+| Screen | What it shows |
+|---|---|
+| ![HA automations](home_assistant_automations.jpg) | The two active automations — `Bracelet — Fall Alert` and `Bracelet — Emergency Button` — with their last-triggered times |
+| ![MQTT messages](home_assistant_mqtt.jpg) | The MQTT broker receiving live messages: `high_confidence` on `bracelet/fall` and `manual_button` on `bracelet/emergency` |

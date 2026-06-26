@@ -192,6 +192,12 @@ Phase 1. The full reasoning, parameter calibration, and references are in
 |---|---|
 | ![Internal wiring](photos/assembled_internal_topdown.jpg) | ![On the wrist](photos/bracelet_on_wrist.jpg) |
 | ![Fall notification](photos/notification_fall_detected.jpg) | ![Emergency notification](photos/notification_manual_emergency.jpg) |
+| ![Home Assistant automations](photos/home_assistant_automations.jpg) | ![MQTT messages](photos/home_assistant_mqtt.jpg) |
+
+> Server-side screens (Home Assistant automations + the MQTT broker receiving the
+> bracelet's messages) and the Serial Monitor captures are in
+> [`photos/`](photos/README.md) and
+> [`firmware/sensors/MPU6050/`](firmware/sensors/MPU6050/MPU6050.md).
 
 More photos in [`photos/`](photos/README.md). The enclosure is a deliberately
 simple 3D-printed prototype case and came out bulky; a smaller case is future
